@@ -1,0 +1,78 @@
+{
+  "name": "@proton/ual-webauth",
+  "version": "0.1.19",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "name": "Metallicus",
+    "url": "https://metallicus.com"
+  },
+  "contributors": [
+    "Metallicus"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "clean-build": "rm -rf dist && yarn build",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "prepublish": "yarn clean-build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@greymass/eosio": "^0.6.0",
+    "@proton/web-sdk": "^4.2.15",
+    "bufferutil": "^4.0.7",
+    "cache-base": "4.0.2",
+    "elliptic": "6.5.4",
+    "encoding": "^0.1.13",
+    "eosio-signing-request": "^2.5.0",
+    "eosjs": "^22.1.0",
+    "inherits": "^2.0.4",
+    "universal-authenticator-library": "0.3.0",
+    "utf-8-validate": "^5.0.10"
+  },
+  "resolutions": {
+    "cache-base": "4.0.0"
+  },
+  "jest": {
+    "verbose": false,
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts?)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/dist"
+    ],
+    "testRegex": "(/src/.*(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testEnvironment": "jsdom"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.17.9",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "@swc/core": "^1.3.35",
+    "@types/elliptic": "^6.4.14",
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.32",
+    "@web/dev-server-rollup": "^0.3.21",
+    "esbuild-plugin-polyfill-node": "^0.1.4",
+    "jest": "^28.1.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "ts-jest": "^28.0.2",
+    "tslint": "^6.1.3",
+    "tsup": "^6.6.3",
+    "typescript": "^4.6.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProtonProtocol/ual-webauth"
+  }
+}
